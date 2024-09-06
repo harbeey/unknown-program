@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Quiz Application</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+   ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: indigo;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: orchid;
+}
+
+.selection {
+        display: flex;
+        align-self: flex-start; 
+        position:absolute;
+        left: 0%;
+    }
+
+    .about-container {
+        position:absolute;
+    }
+
+    body {
+        background: linear-gradient(45deg, #0000ff, #4b0082, #8a2be2, #9400d3, #9932cc);
+        background-size: 200% 200%;
+        animation: gradientAnimation 15s ease infinite;
+        background: var(--background-gradient);
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }  
+
+@media (max-width: 600px) {
+    .about-container {
+        padding: 15px;
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .about-container h1 {
+        font-size: 20px;
+    }
+
+    .about-container h2 {
+        font-size: 18px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    .selection {
+            display:flexbox;
+            position: relative;
+            position: absolute;
+            left: 0%;
+        }
+
+}
+</style>
+<body>
+    <div class="selection">
+        <ul>
+            <li><a href="menu.html"><i class="fa-solid fa-house" class> Menu</i></a></li>
+            <li><a href="rankings.html"><i class="fa-regular fa-user"> Users</i></a></li>
+            <li><a class="active" href="about.html"><i class="fa-solid fa-circle-exclamation" id="hide"> About</i></a></li>
+            <li><a href="login.php"><i class="fa-solid fa-right-from-bracket">Logout</i></a></li>
+        </ul>
+    </div>
+    <div class="about-container">
+        <h1><i class="fa-regular fa-circle" style="color: black"> About</i></h1>
+        <p>Welcome to Qui-via! This platform is designed to provide an engaging and educational experience for users of all ages. Whether you're looking to test your knowledge, learn something new, or just have fun, our quizzes cover a wide range of topics and difficulties to suit everyone.</p>
+        
+        <div class="list">
+        <h2><i class="fa-regular fa-circle" style="color: black"> Features</i></h2>
+
+            <b>Variety of categories,
+            Multiple difficulty levels, and
+            User-friendly interface</b>
+
+
+        <h2><i class="fa-regular fa-circle" style="color: black"> How it works?</i></h2>
+        <p>Select your preferred category, difficulty level, and number of questions. Start the quiz and answer the questions to the best of your ability. At the end of the quiz, you'll see your score and a review of your answers.</p>
+
+        <button id="back-to-menu">Back to Menu</button>
+    </div>
+    <script>
+        document.getElementById('back-to-menu').addEventListener('click', function() {
+            window.location.href = 'menu.html';
+        });
+    </script>
+    <script src="https://kit.fontawesome.com/a8759ef171.js" crossorigin="anonymous"></script>
+</body>
+</html>

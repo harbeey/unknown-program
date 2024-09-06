@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Menu</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    .h1 {
+        margin: auto;
+        width: 50%;
+        padding: 10px;
+        text-align: center;
+        display: block;
+        font-family: Bestowens;
+    }
+
+    .menu-container {
+        margin: auto;
+        width: auto;
+        padding: 10px;
+        text-align: center;
+        display: flex;
+        align-items: center
+    }
+
+    .quiz-options {
+        display: block;
+        align-items: center;
+    }
+
+    :root {
+        --background-gradient: linear-gradient(45deg, #0000ff, #4b0082, #8a2be2, #9400d3, #9932cc);
+        --animation: gradientAnimation 15s ease infinite;
+        --gray: orchid;
+        --darkgray: indigo;
+    }
+
+    select {
+        /* Reset Select */
+        appearance: none;
+        outline: 10px red;
+        border: 0;
+        box-shadow: none;
+        /* Personalize */
+        flex: 1;
+        padding: 0 1em;
+        color: #fff;
+        background-color: var(--gray);
+        background-image: none;
+        cursor: pointer;
+    }
+    /* Remove IE arrow */
+    select::-ms-expand {
+        display: none;
+    }
+    /* Custom Select wrapper */
+    .select {
+        position: relative;
+        display: flex;
+        width: 20em;
+        height: 3em;
+        border-radius: .25em;
+        overflow: hidden;
+    }
+    /* Arrow */
+    .select::after {
+        content: '\25BC';
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 1em;
+        background-color: var(--gray);
+        transition: .25s all ease;
+        pointer-events: none;
+    }
+    /* Transition */
+    .select:hover::after {
+        color: #f39c12;
+    }
+
+    /* Other styles */
+    body {
+        color: #fff;
+        background: var(--background-gradient);
+    }
+
+
+    /* Centering */
+    .container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); 
+    }
+
+    .down_note {
+        display: flex;
+        justify-content: center;
+    }
+    
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    background-color: indigo;
+    }
+
+    li {
+    float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: orchid;
+}
+
+    .selection {
+        display: flex;
+        align-self: flex-start; 
+        position:relative;
+        left: 0%;
+    }
+
+    .menu {
+        display: block;
+        margin: auto;
+        align-items: center;
+        left: -10%;
+        position: relative;
+    }
+
+    img {
+        width: 270px;
+        height: 240px;
+    }
+
+    @media (max-width: 600px) {
+        .selection {
+            display:block;
+            position: relative;
+            position: absolute;
+        }
+        img {
+            width: 100px;
+            height: 70px;
+            
+        }
+
+        .menu-container {
+            padding: 20px;
+            position: relative;
+        }
+
+        .menu {
+            margin-bottom: 500px;
+            margin-left: 160px;
+            position: absolute;
+        }
+
+    }
+</style>
+<body>
+    <div class="selection">
+        <ul>
+            <li><a class="active" href="menu.html"><i class="fa-solid fa-house"> Menu</i></a></li>
+            <li><a href="rankings.html"><i class="fa-regular fa-user">Users</i></a></li>
+            <li><a href="about.html"><i class="fa-solid fa-circle-exclamation"> About</i></a></li>
+            <li><a href="login.php"><i class="fa-solid fa-right-from-bracket">Logout</i></a></li>
+        </ul>
+    </div>
+    <div class="menu">
+        <h1 class=""><i class="fa-solid fa-q"></i><i class="fa-solid fa-u"></i><i class="fa-solid fa-i"></i>
+            <i class="fa-solid fa-pencil" style="color: #FFD43B;"></i> <i class="fa-solid fa-v"></i><i class="fa-solid fa-i"></i><i class="fa-solid fa-a"></i></h1>
+        <img src="studying.png">
+    </div>
+    <div class="menu-container">
+        <label for="category"><i class="fa-solid fa-book"> Choose a category:</i></label>
+        <select id="category">
+            <option value="">Loading...</option>
+        </select>
+        <label for="difficulty"><i class="fa-solid fa-chalkboard"> Choose difficulty:</i></label>
+        <select id="difficulty">
+            <option value="easy"><i class="fa-solid fa-book-open">Easy</i></option>
+            <option value="medium"><i class="fa-solid fa-book-open">Medium</i></option>
+            <option value="hard"><i class="fa-solid fa-book-open">Hard</i></option>
+        </select>
+        <label for="quiz-amount"><i class="fa-regular fa-file-lines"> Number of questions:</i></label>
+        <input type="number" id="quiz-amount" min="1" max="50" value="10">
+        <button id="start-quiz"><i class="fa-solid fa-circle-play"> Start Quiz</i></button>
+    </div>
+    <script src="menu.js"></script>
+    <script src="https://kit.fontawesome.com/a8759ef171.js" crossorigin="anonymous"></script>
+</body>
+</html>

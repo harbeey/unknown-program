@@ -1,0 +1,300 @@
+body {
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 110vh;
+  background-color: #f0f0f0;
+}
+/* Styles for the menu container */
+.menu-container, .quiz-container, .ranking-container {
+  background-color: indigo;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px; /* Allow for wider containers */
+  text-align: center;
+  display: block;
+  flex-direction: column;
+  border: 3px solid purple;
+  margin: auto;
+}
+
+/* Header styling */
+.menu-container h1, .quiz-container h1 {
+  font-size: 24px;
+  color: #333333;
+  margin-bottom: 20px;
+}
+
+/* Styles for select, input, and button elements */
+select, input{
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 12px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+/* Button specific styles */
+button {
+  background-color: orchid;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: block;
+  margin: auto;
+  width: auto;
+  margin-bottom: 15px;
+  padding: 12px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: darkorchid;
+}
+
+/* Label styling */
+label {
+  display: block;
+  text-align: left;
+  font-size: 14px;
+  color: white;
+  margin-bottom: 5px;
+  margin: auto;
+}
+
+.answers {
+  display: flex;
+  flex-direction: column;
+}
+
+.answer {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.answer input[type="radio"] {
+  display: none;
+}
+
+.answer .custom-radio {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid orchid;
+  border-radius: 50%;
+  margin-right: 10px;
+  position: relative;
+}
+
+.answer input[type="radio"]:checked + .custom-radio::after {
+  content: "";
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: orchid;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+button:disabled {
+  background-color: #cccccc;
+}
+
+#try-again, #back-to-menu {
+  display: none;
+  margin-top: 10px;
+}
+
+#questions-review {
+  text-align: left;
+  margin-top: 20px;
+}
+
+.question-review {
+  margin-bottom: 15px;
+}
+
+.question-review .question {
+  font-weight: bold;
+}
+
+.question-review .correct-answer, .question-review .user-answer {
+  margin-left: 10px;
+}
+
+#results {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+/* Header styling */
+.rankings-container h1 {
+  font-size: 24px;
+  color: #333333;
+  margin-bottom: 20px;
+}
+
+/* Table styling */
+#rankings-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+#rankings-table th, #rankings-table td {
+  border: 1px solid #cccccc;
+  padding: 8px;
+  text-align: center;
+}
+
+#rankings-table th {
+  background-color: indigo;
+  color: #ffffff;
+}
+
+#rankings-table td {
+  background-color: orchid;
+}
+
+/* Styles for the rankings container */
+.rankings-container {
+  background-color: indigo;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 320px;
+  text-align: center;
+}
+
+/* Header styling */
+.rankings-container h1 {
+  font-size: 24px;
+  color: white;
+  margin-bottom: 20px;
+}
+
+#results {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+#try-again, #back-to-menu {
+  display: none;
+  margin-top: 10px;
+}
+
+#question-review {
+  display: none;
+  text-align: left;
+  margin-top: 20px;
+}
+
+.review-question {
+  margin-bottom: 20px;
+}
+
+
+.review-question h3 {
+  margin-bottom: 5px;
+}
+
+.review-question p {
+  margin: 0;
+}
+
+.about-container {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 90%;
+  text-align: center;
+  overflow-y: auto;
+  max-height: 90vh; /* Ensure the content doesn't exceed the viewport height */
+}
+
+/* Header styling */
+.about-container h1, .about-container h2 {
+  color: #333333;
+}
+
+/* Paragraph styling */
+.about-container p {
+  color: #666666;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* List styling */
+.about-container ul {
+  text-align: left;
+  margin: 20px 0;
+  padding-left: 20px;
+}
+
+.about-container li {
+  margin-bottom: 10px;
+  color: #666666;
+}
+
+@media (max-width: 600px) {
+  .quiz-container{
+      padding: 15px;
+  }
+  
+  .menu-container {
+    margin: auto;
+  }
+
+  h1 {
+      font-size: 1.5em;
+  }
+
+  button {
+      font-size: 0.9em;
+      padding: 8px 12px;
+  }
+}
+
+  @media (max-width: 600px) {
+    .login-container, .signup-container {
+        padding: 20px;
+        width: 90%;
+    }
+
+    .login-container h2, .signup-container h2 {
+        font-size: 20px;
+    }
+
+    .login-container input[type="submit"],
+    .signup-container input[type="submit"],
+    .login-container button,
+    .signup-container button {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .login-container input[type="text"],
+    .login-container input[type="password"],
+    .signup-container input[type="text"],
+    .signup-container input[type="password"] {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+

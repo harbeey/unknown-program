@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <h1 style="color: orchid;">Quiz</h1>
+        <div id="quiz"></div>
+        <button id="next" style="display:none;"><i class="fa-solid fa-circle-right"> Next</i></button>
+        <button id="submit" style="display:none;">Submit</button>
+        <div id="results" style="display:none;"></div>
+        <div id="question-review" style="display:none;"></div>
+        <button id="try-again" style="display:none;">Try Again</button>
+        <button id="back-to-menu" style="display:none;">Back to Menu</button>
+    </div>
+    <script src="quiz.js"></script>
+    <script src="https://kit.fontawesome.com/a8759ef171.js" crossorigin="anonymous"></script>
+</body>
+<style>
+    :root {
+        --background-gradient: linear-gradient(45deg, #0000ff, #4b0082, #8a2be2, #9400d3, #9932cc);
+        --animation: gradientAnimation 15s ease infinite;
+        --gray: #34495e;
+        --darkgray: #2c3e50;
+    }
+
+    /* Other styles */
+    body {
+        color: #fff;
+        background: var(--background-gradient);
+    }
+
+    
+</style>
+</html>
